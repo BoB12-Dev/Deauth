@@ -31,3 +31,20 @@ Deauth attack
 
 </details>
 
+<details>
+    <summary> Authentication Frame의 경우 </summary>
+    Authentication패킷의 경우
+
+    Deauthentication 프레임과 타입, 그리고 Fixed Parameters가 다르다.
+
+    Type
+    - Deauth -> 0x000c
+    - Auth -> 0x000b
+
+
+    Fixed parameter
+
+    Deauth -> 2byte(reason code)
+    Auth -> 6byte(Auth Algorithm - 2byte, Auth SEQ - 2byte(0x0000) , Status Code - 2byte(0x0000))
+
+</details>
