@@ -33,9 +33,11 @@ int main(int argc, char *argv[]){
 
     if(argc ==3 ){
         AP_broadcast_frame(&packet);
+        printf("AP_Broadcast Mode\n");
     }
     else if(argc == 4){
         AP_unicast_frame(&packet, argv[3]);
+        printf("AP_unicast_frame Mode\n");
     }
     else if(argc == 5){
         auth_mode(&packet);
@@ -64,7 +66,8 @@ int main(int argc, char *argv[]){
     return 0;
 }
 
-// 폰 MAC : 6C:AC:C2:FA:F8:F4
+// 폰 MAC : 6E:16:EE:4E:47:FA
+// 태블릿 MAC : 2A:AE:C4:FA:C9:1A
 void usage(){
     printf("syntax : deauth-attack <interface> <ap mac> [<station mac> [-auth]]\n");
     printf("sample : deauth-attack mon0 00:11:22:33:44:55 66:77:88:99:AA:BB\n");
