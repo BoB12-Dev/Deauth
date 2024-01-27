@@ -1,6 +1,8 @@
 # Deauth
 Deauth attack
 
+와이어샤크 필터링 옵션
+wlan.fc.type_subtype == 0x000c || wlan.fc.type_subtype ==  0x000a || wlan.fc.type_subtype == 0x000b
 
 <details>
     <summary>패킷 구분</summary>
@@ -45,6 +47,13 @@ Deauth attack
     Fixed parameter
 
     Deauth -> 2byte(reason code)
-    Auth -> 6byte(Auth Algorithm - 2byte, Auth SEQ - 2byte(0x0000) , Status Code - 2byte(0x0000))
+    Auth -> 6byte
+        - Auth Algorithm 2byte (0x0000)
+        - Auth SEQ - 2byte(0x0001) 
+        - Status Code - 2byte(0x0000)
+
+    SEQ필드의 경우 
+        station -> ap로 갈때 0x0001
+        ap -> station일때 0x0002
 
 </details>

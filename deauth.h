@@ -5,7 +5,7 @@ struct Radiotap {
     uint16_t it_len;
     uint32_t it_present;
     uint32_t padding[4];
-}; // radiotap 11byte
+}; // radiotap 24byte
 
 struct Deauth_Frame {
     uint16_t type; //0x000c
@@ -14,7 +14,7 @@ struct Deauth_Frame {
     uint8_t source_address[6]; // AP mac
     uint8_t bssid[6];
     uint16_t fragment_num;
-    uint16_t sequence_number; // == Fragment number
+    uint16_t sequence_number;
 }; // beacon frame 24byte
 
 
@@ -22,9 +22,9 @@ struct Fixed_Parameter {
     uint8_t reason_code; // 0x0007 , 0x0003
 }; // fixed 2byte
 
-struct Auth_Fixed_Parameter{
-    uint16_t Algorithm;
+struct Auth_Fixed_Parameter {
     uint16_t SEQ;
+    uint16_t Algorithm;
     uint16_t Status_code;
 };
 
